@@ -1,0 +1,95 @@
+.request-form-container {
+   height: 1800px;
+   background:  #5592d4;
+   width: 100%;
+  
+   margin: 0 auto;
+   padding: 20px;
+  }
+  
+  .request-form {
+    height: 1100px;
+    background: rgb(241, 237, 237);
+    
+    
+    
+   
+   
+   
+  }
+  .head{
+    font-weight: bold;
+    color: #55df78;
+    font-size: 100px;
+
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 100px;
+    box-sizing: border-box;
+    background: white;
+    padding-top: 100px;
+  }
+  
+  /* textarea {
+    resize: vertical;
+    min-height: 100px;
+  } */
+  
+  .submit-btn {
+    padding: 12px 20px;
+    background-color: #55df78;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 500px;
+    border-radius: 20px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  .inpu{
+    padding-top: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .request-form-container {
+      padding: 10px;
+    
+    }
+  
+    .form-group {
+      margin-bottom: 10px;
+    }
+  
+    .submit-btn {
+      padding: 10px 15px;
+    }
+    .request-form{
+        
+  
+  justify-content: center;
+  
+       
+    }
+
+  }
+  
