@@ -1,22 +1,30 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-// i
-import React from 'react';
-import Request from './component/pages/request'
-import SignUp from './component/pages/signup';
+import { Route, Routes } from 'react-router-dom'
+import './App.css'
+import Home from './component/pages/home'
+import Signup from './component/pages/signup'
+import Certificate from './component/pages/certificate'
+import AppLayout from './component/layout'
+import RequestForm from './component/pages/request'
+import AppNotfound from './component/pages/notFound'
 
-const App = () => {
-  return (
-    <div className="App">
-      
-      <Request/>
-      <SignUp/>
-    </div>
-  );
-};
 
-export default App;
+function App() {
+  return(
+    <>
+   <AppLayout>
+   <Routes>
+      <Route path='/' element={ <Home/> } />
+      <Route path='signup' element={<Signup/>}/>
+      <Route path='/request' element={ <RequestForm/>} />
+      <Route path='/certificate' element={<Certificate/>}/>
+      <Route path='*' element={<AppNotfound/>}/>
+    </Routes>
+   </AppLayout>
+    </>
+  )
   // const [count, setCount] = useState(0)
 
   // return (
@@ -43,6 +51,6 @@ export default App;
   //     </p>
   //   </>
   // )
-// }
+}
 
-// export default App
+export default App

@@ -1,17 +1,42 @@
 import { Layout, Menu, theme } from 'antd';
+import { useNavigate } from 'react-router-dom';
+const { Header, Content } = Layout;
 
+const items = [
+    {
+        label:"Home",
+        key:"/"
+    },
+    // {
+    //     label:"Counter",
+    //     key:"/counter"
+    // },
+    // {
+    //     label:"TodoApp",
+    //     key:"/Todo"
+    // },
+    // {
+    //     label:"Contact",
+    //     key:"/contact"
+    // },
+    {
+      label:"SignUp",
+      key:"/signup"
+  },
+//   {
+//     label:"Request Form",
+//     key:"/request"
+// },
 
-const { Header, Content, Footer } = Layout;
+]
 
-const items = new Array(3).fill(null).map((_, index) => ({
-  key: String(index + 1),
-  label: `nav ${index + 1}`,
-}));
+const AppLayout = ({ children }) => {
 
-const AppLayout = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
+
+const navigate = useNavigate();
 
   return (
     <Layout>
@@ -27,35 +52,45 @@ const AppLayout = () => {
       >
         <div className="demo-logo" />
         <Menu
+        onClick={(data)=>{
+            // console.log(data);
+            navigate(data.key);
+        }   
+        }
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={['2']}
           items={items}
-          style={{ flex: 1, minWidth: 0 }}
+          style={{
+            flex: 1,
+            minWidth: 0,
+          }}
         />
       </Header>
-      <Content style={{ padding: '0 48px' }}>
-        {/* <Breadcrumb style={{ margin: '16px 0' }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb> */}
+      <Content
+        style={{
+          padding: '0 48px',
+        }}
+      >
         <div
           style={{
-            padding: 24,
+            padding: 15,
             minHeight: 380,
             background: colorBgContainer,
             borderRadius: borderRadiusLG,
           }}
         >
-          Content
+          {children}
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>
+      {/* <Footer
+        style={{
+          textAlign: 'center',
+        }}
+      >
         Ant Design ©{new Date().getFullYear()} Created by Ant UED
-      </Footer>
+      </Footer> */}
     </Layout>
   );
 };
-
 export default AppLayout;
