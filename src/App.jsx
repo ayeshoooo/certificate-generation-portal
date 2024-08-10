@@ -15,13 +15,15 @@ function App() {
   return(
     <>
    <AppLayout>
-   <Routes>
+   {/* <Routes>
       <Route path='/' element={ <Home/> } />
       <Route path='signup' element={<Signup/>}/>
       <Route path='/request' element={ <RequestForm/>} />
       <Route path='/certificate' element={<Certificate/>}/>
       <Route path='*' element={<AppNotfound/>}/>
-    </Routes>
+      <RequestForm/>
+    </Routes> */}
+    <RequestForm/>
    </AppLayout>
     </>
   )

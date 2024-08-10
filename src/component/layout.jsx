@@ -70,14 +70,16 @@ const navigate = useNavigate();
       <Content
         style={{
           padding: '0 48px',
+          backgroundColor:'green'
         }}
       >
         <div
           style={{
             padding: 15,
             minHeight: 380,
-            background: colorBgContainer,
+            // background: colorBgContainer,
             borderRadius: borderRadiusLG,
+            backgroundColor:'rgb(207, 193, 193)'
           }}
         >
           {children}
